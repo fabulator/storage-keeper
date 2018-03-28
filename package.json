@@ -1,0 +1,37 @@
+{
+  "name": "storage-keeper",
+  "version": "1.0.0",
+  "description": "Keeper for handling browser and node storages",
+  "main": "./src/index.js",
+  "scripts": {
+    "js-lint": "node node_modules/eslint/bin/eslint.js --ext .js ./src ./tests",
+    "js-lint-export": "npm run js-lint -- -o ./tests_results/checkstyle/js-checkstyle.xml -f checkstyle",
+    "flow-init": "node node_modules/flow-typed/dist/cli.js install jest@22.x js-cookie@2.x",
+    "flow": "node node_modules/flow-bin/vendor/flow",
+    "flow-coverage": "node node_modules/flow-coverage-report/bin/flow-coverage-report.js -f \"node node_modules/flow-bin/vendor/flow\" -i \"./src/**/*.js*\" -t html -t text -t json -o tests_results/coverage/flow",
+    "build": "rm -rf ./dist && node node_modules/rollup/bin/rollup --config ./rollup.config.js",
+    "test": "node ./node_modules/jest/bin/jest.js",
+    "test-bundle": "npm run test -- --config=jest.config.bundle.js",
+    "develop": "node node_modules/rollup/bin/rollup --config ./rollup.config.develop.js --watch | browser-sync start --server dev --host 0.0.0.0 --port=8080 --open local --files ./dev/index.build.js",
+    "precommit": "npm run js-lint && npm run flow && npm run test && npm run build && npm run test-bundle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fabulator/storage-keeper.git"
+  },
+  "author": "Michal Ozogán <michal@ozogan.eu>",
+  "license": "Apache License 2.0",
+  "homepage": "https://github.com/fabulator/storage-keeper.git",
+  "devDependencies": {
+    "eslint-config-socifi": "^1.2.0",
+    "flow-bin": "^0.68.0",
+    "flow-coverage-report": "^0.4.1",
+    "flow-typed": "^2.3.0",
+    "jest-localstorage-mock": "^2.2.0",
+    "socifi-jest-config": "^1.1.0",
+    "socifi-rollup-config": "^1.5.1"
+  },
+  "dependencies": {
+    "js-cookie": "^2.2.0"
+  }
+}
