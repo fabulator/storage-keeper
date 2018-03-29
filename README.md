@@ -1,5 +1,8 @@
 # Storage Keeper
 
+[![codecov](https://img.shields.io/npm/v/storage-keeper.svg)](https://www.npmjs.com/package/storage-keeper) [![codecov](https://codecov.io/gh/fabulator/storage-keeper/branch/master/graph/badge.svg)](https://codecov.io/gh/fabulator/storage-keeper)  [![codecov](https://travis-ci.org/fabulator/storage-keeper.svg?branch=master)](https://travis-ci.org/fabulator/storage-keeper) [![Maintainability](https://api.codeclimate.com/v1/badges/7ab35417954388460660/maintainability)](https://codeclimate.com/github/fabulator/storage-keeper/maintainability)
+
+
 This library provide simple way how to interact with different browser (localstorage, sessionstorage, cookie) and node (fs) storages with same interface.
 
 Storage have only three simple methods:
