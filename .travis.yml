@@ -1,10 +1,11 @@
 language: node_js
 node_js:
   - 9
+before_script:
+  - npm run flow-init
 script:
   - npm run js-lint-export
   - npm run test
-  - npm run flow-init
   - npm run flow
   - npm run flow-coverage
 
