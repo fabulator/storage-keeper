@@ -20,7 +20,7 @@
     "url": "git+ssh://git@github.com/fabulator/storage-keeper.git"
   },
   "author": "Michal Ozogán <michal@ozogan.eu>",
-  "license": "Apache License 2.0",
+  "license": "Apache-2.0",
   "homepage": "https://github.com/fabulator/storage-keeper.git",
   "devDependencies": {
     "eslint-config-socifi": "^1.2.0",

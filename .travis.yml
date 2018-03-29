@@ -1,9 +1,10 @@
 language: node_js
 node_js:
   - 9
-after_success:
+script:
   - npm run js-lint-export
   - npm run test
+  - npm run flow-init
   - npm run flow
   - npm run flow-coverage
 
