@@ -4,7 +4,6 @@ node_js:
 install:
     - npm install
     - npm install -g codecov
-before_script:
     - npm run flow-init
 script:
     - npm run js-lint-export
@@ -12,5 +11,10 @@ script:
     - npm run flow
     - npm run flow-coverage
     - codecov
-
 sudo: required
+deploy:
+  provider: npm
+  email: michal@fabulator.cz
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
