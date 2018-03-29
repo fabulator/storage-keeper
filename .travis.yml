@@ -3,6 +3,7 @@ node_js:
     - 9
 install:
     - npm install -g codecov
+before_script:
     - npm run flow-init
 script:
     - npm run js-lint-export
