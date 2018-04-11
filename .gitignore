@@ -3,3 +3,5 @@
 .idea
 /flow-typed/npm
 /dev
+/dist
+/tests_results
