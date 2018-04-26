@@ -4,6 +4,7 @@
 .npmignore
 .travis.yml
 jest.config.js
+jest.config.build.js
 renovate.json
 rollup.config.js
 tests

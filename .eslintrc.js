@@ -1,6 +1,5 @@
 module.exports = {
     extends: [
-        'socifi',
+        '@socifi',
     ],
-    root: true,
 };
