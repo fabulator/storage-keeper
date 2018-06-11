@@ -1,10 +1,16 @@
-// @flow
+// @flow strict
 import fs from 'fs';
 import { type Adapter } from './Adapter';
 
 export default class FileAdapter implements Adapter {
+    /**
+     * Path of file.
+     */
     path: string;
 
+    /**
+     * @param path - Path of file where will be data stored
+     */
     constructor(path: string) {
         this.path = path;
         if (!fs.existsSync(path)) {

@@ -1,4 +1,4 @@
-// @flow
+// @flow strict
 
 export interface Adapter {
     getItem(key: string): ?string;

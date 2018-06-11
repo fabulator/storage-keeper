@@ -1,10 +1,11 @@
-// @flow
+// @flow strict
 import Storage from './Storage';
 
-class LocalStorage extends Storage {
+export default class LocalStorage extends Storage {
+    /**
+     * @param prefix - Prefix of storage key
+     */
     constructor(prefix: string = '') {
         super(prefix, localStorage);
     }
 }
-
-export default LocalStorage;

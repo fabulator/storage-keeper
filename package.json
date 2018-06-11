@@ -1,6 +1,6 @@
 {
   "name": "storage-keeper",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Keeper for handling browser and node storages",
   "main": "./dist/index.js",
   "jsnext:main": "dist/index.es.js",
@@ -25,7 +25,7 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/fabulator/storage-keeper.git",
   "devDependencies": {
-    "@socifi/eslint-config": "^1.8.1",
+    "@socifi/eslint-config": "^1.9.0",
     "flow-bin": "^0.74.0",
     "flow-coverage-report": "^0.5.0",
     "flow-typed": "^2.3.0",

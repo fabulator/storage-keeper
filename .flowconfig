@@ -6,7 +6,6 @@
 <PROJECT_ROOT>/dist/.*
 .*node_modules/**.*
 
-
 [include]
 
 [libs]
@@ -16,3 +15,8 @@
 [version]
 >=0.72.0
 
+[strict]
+nonstrict-import
+unsafe-getters-setters
+untyped-import
+untyped-type-import

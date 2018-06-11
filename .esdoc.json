@@ -1,0 +1,20 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+  "excludes": ["index.js", "tryParseJson.js"],
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin"
+    },
+    {"name": "esdoc-flow-type-plugin", "option": {"enable": true}},
+    {"name": "esdoc-ecmascript-proposal-plugin", "option": {"all": true}},
+    {
+      "name": "esdoc-integrate-test-plugin",
+      "option": {
+        "source": "./tests/",
+        "interfaces": ["describe", "it"],
+        "includes": ["test\\.js$"]
+      }
+    }
+  ]
+}

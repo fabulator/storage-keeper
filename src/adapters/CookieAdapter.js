@@ -1,13 +1,20 @@
-// @flow
+// @flow strict
 import Cookies, { type CookieOptions } from 'js-cookie';
 import { type Adapter } from './Adapter';
-import Storage, { type EncodedValue } from './../Storage';
+import { type EncodedValue } from './../Storage';
+import tryParseJson from './../tryParseJson';
 
 export type { CookieOptions };
 
-class CookieAdapter implements Adapter {
+export default class CookieAdapter implements Adapter {
+    /**
+     * Options for js-cookie library
+     */
     options: CookieOptions;
 
+    /**
+     * @param options - Options for js-cookie library
+     */
     constructor(options: CookieOptions = {}) {
         this.options = options;
     }
@@ -17,7 +24,7 @@ class CookieAdapter implements Adapter {
     }
 
     setItem(key: string, data: string): void {
-        const decoded: EncodedValue | string = Storage.tryParseJson(data);
+        const decoded: EncodedValue | string = tryParseJson(data);
 
         if (typeof decoded === 'object' && decoded.expire) {
             const time = new Date();
@@ -38,5 +45,3 @@ class CookieAdapter implements Adapter {
         Cookies.remove(key, this.options);
     }
 }
-
-export default CookieAdapter;

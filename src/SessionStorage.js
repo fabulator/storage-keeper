@@ -1,10 +1,11 @@
-// @flow
+// @flow strict
 import Storage from './Storage';
 
-class SessionStorage extends Storage {
-    constructor(prefix: string = '') {
+export default class SessionStorage extends Storage {
+    /**
+     * @param prefix - Prefix of storage key
+     */
+    constructor(prefix: any = '') {
         super(prefix, sessionStorage);
     }
 }
-
-export default SessionStorage;
