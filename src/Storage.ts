@@ -1,29 +1,28 @@
-// @flow strict
-import { type Adapter } from './adapters/Adapter';
+import { Adapter } from './adapters/Adapter';
 import tryParseJson from './tryParseJson';
 
 export type EncodedValue = {
     expire: number,
     value: string | null,
-}
+};
 
 export default class Storage {
     /**
      * Storage key prefix
      */
-    prefix: string;
+    private prefix: string;
 
     /**
      * Adapter for storing and getting values
      */
-    storeAdapter: Adapter;
+    private storeAdapter: Adapter;
 
     /**
      *
      * @param prefix - Storage key prefix
      * @param storeAdapter - Adapter for storing and getting values
      */
-    constructor(prefix: string = '', storeAdapter: Adapter = localStorage) {
+    public constructor(prefix = '', storeAdapter: Adapter = localStorage) {
         this.prefix = prefix;
         this.storeAdapter = storeAdapter;
     }
@@ -36,12 +35,17 @@ export default class Storage {
      * @param key - Key of item
      * @returns Decoded value
      */
-    _parseEncodedValue(object: EncodedValue | Object, key: string): string | Object | null {
+    private _parseEncodedValue(object: EncodedValue | Object, key: string): string | Object | null {
         // is value expired?
+
+        // @ts-ignore
         if (object.expire && object.value && object.expire < Date.now()) {
             this.remove(key);
             return null;
+            // @ts-ignore
+            // eslint-disable-next-line
         } else if (object.expire && object.value) {
+            // @ts-ignore
             return tryParseJson(object.value);
         }
 
@@ -54,8 +58,8 @@ export default class Storage {
      * @param key - storage key
      * @returns content of storage
      */
-    get(key: string): string | Object | null {
-        const value: ?string = this.storeAdapter.getItem(`${this.prefix}${key}`);
+    public get(key: string): string | Object | null {
+        const value = this.storeAdapter.getItem(`${this.prefix}${key}`);
 
         if (!value) {
             return null;
@@ -63,7 +67,7 @@ export default class Storage {
 
         try {
             return this._parseEncodedValue(JSON.parse(value), key);
-        } catch (error) {
+        } catch (exception) {
             return value;
         }
     }
@@ -73,7 +77,7 @@ export default class Storage {
      *
      * @param key - key to remove
      */
-    remove(key: string) {
+    public remove(key: string) {
         this.storeAdapter.removeItem(`${this.prefix}${key}`);
     }
 
@@ -84,7 +88,7 @@ export default class Storage {
      * @param value - value of item
      * @param expire - date of expire
      */
-    set(key: string, value: string | number | Object | null, expire: ?Date): void {
+    public set(key: string, value: string | number | Object | null, expire?: Date): void {
         let valueToSave = typeof value === 'number' ? value.toString() : value;
         if (expire) {
             valueToSave = {

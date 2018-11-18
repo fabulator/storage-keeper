@@ -1,26 +1,18 @@
-import Cookies from 'js-cookie';
-import { CookieAdapter } from './../../src/adapters';
+import * as Cookie from 'js-cookie';
+import CookieAdapter from '../../src/adapters/CookieAdapter';
+
+jest.mock('js-cookie');
 
 describe('Test CookieAdapter', () => {
-    let setSpy;
-    let removeSpy;
-    let getSpy;
-
-    beforeEach(() => {
-        setSpy = jest.spyOn(Cookies, 'set');
-        removeSpy = jest.spyOn(Cookies, 'remove');
-        getSpy = jest.spyOn(Cookies, 'get');
-    });
-
     it('communicate with Cookie service', () => {
         const adapter = new CookieAdapter();
-        adapter.setItem('a', 1);
+        adapter.setItem('a', '1');
         adapter.getItem('a');
         adapter.removeItem('a');
 
-        expect(setSpy).toHaveBeenCalledWith('a', 1, {});
-        expect(removeSpy).toHaveBeenCalledWith('a', {});
-        expect(getSpy).toHaveBeenCalledWith('a');
+        expect(Cookie.set).toHaveBeenCalledWith('a', '1', {});
+        expect(Cookie.remove).toHaveBeenCalledWith('a', {});
+        expect(Cookie.get).toHaveBeenCalledWith('a');
     });
 
     it('set expire date based on value', () => {
@@ -40,7 +32,7 @@ describe('Test CookieAdapter', () => {
         const expire = new Date();
         expire.setTime(now);
 
-        expect(setSpy).toHaveBeenCalledWith('some-key', valueToSet, {
+        expect(Cookie.set).toHaveBeenCalledWith('some-key', valueToSet, {
             expires: expire,
         });
     });
@@ -49,12 +41,12 @@ describe('Test CookieAdapter', () => {
         const adapter = new CookieAdapter({
             path: 'some-path',
         });
-        adapter.setItem('a', 1);
+        adapter.setItem('a', '1');
         adapter.removeItem('a');
-        expect(setSpy).toHaveBeenCalledWith('a', 1, {
+        expect(Cookie.set).toHaveBeenCalledWith('a', '1', {
             path: 'some-path',
         });
-        expect(removeSpy).toHaveBeenCalledWith('a', {
+        expect(Cookie.remove).toHaveBeenCalledWith('a', {
             path: 'some-path',
         });
     });

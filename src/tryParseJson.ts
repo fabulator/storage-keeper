@@ -1,5 +1,3 @@
-// @flow strict
-
 /**
  * Try to parse json.
  *
@@ -9,7 +7,7 @@
 export default function tryParseJson(json: string): Object | string {
     try {
         return JSON.parse(json);
-    } catch (error) {
+    } catch (exception) {
         return json;
     }
 }

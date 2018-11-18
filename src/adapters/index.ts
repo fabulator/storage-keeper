@@ -1,4 +1,3 @@
-// @flow strict
 import CookieAdapter from './CookieAdapter';
 import FileAdapter from './FileAdapter';
 

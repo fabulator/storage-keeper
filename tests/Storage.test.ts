@@ -1,5 +1,5 @@
 import 'jest-localstorage-mock';
-import { Storage, SessionStorage, LocalStorage } from './../src';
+import { Storage, SessionStorage, LocalStorage } from '../src';
 
 describe('Test storage class', () => {
     const storage = new Storage('prefix-');

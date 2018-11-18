@@ -1,7 +1,6 @@
-# Created by .ignore support plugin (hsz.mobi)
-/node_modules
+node_modules
 .idea
-/flow-typed/npm
-/dev
-/dist
-/tests_results
+dev
+tests_results
+dist
+build

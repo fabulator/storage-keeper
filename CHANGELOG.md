@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2018-11-18
+### Changed
+- Migrate to typescript
+
+
 ## [1.1.0] - 2018-06-11
 ### Added
 - Add ESDoc configuration
