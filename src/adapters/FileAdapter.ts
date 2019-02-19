@@ -17,11 +17,11 @@ export default class FileAdapter implements Adapter {
         }
     }
 
-    private getFileContent(): Object {
+    private getFileContent(): Record<string, any> {
         return JSON.parse(fs.readFileSync(this.path).toString());
     }
 
-    public updateData(data: Object) {
+    public updateData(data: Record<string, any>) {
         fs.writeFileSync(this.path, JSON.stringify(data));
     }
 

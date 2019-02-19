@@ -1,10 +1,10 @@
 import { Adapter } from './adapters/Adapter';
 import tryParseJson from './tryParseJson';
 
-export type EncodedValue = {
+export interface EncodedValue {
     expire: number,
     value: string | null,
-};
+}
 
 export default class Storage {
     /**
@@ -35,7 +35,7 @@ export default class Storage {
      * @param key - Key of item
      * @returns Decoded value
      */
-    private _parseEncodedValue(object: EncodedValue | Object, key: string): string | Object | null {
+    private _parseEncodedValue(object: EncodedValue | Record<string, any>, key: string): string | Record<string, any> | null {
         // is value expired?
 
         // @ts-ignore
@@ -58,7 +58,7 @@ export default class Storage {
      * @param key - storage key
      * @returns content of storage
      */
-    public get(key: string): string | Object | null {
+    public get(key: string): string | Record<string, any> | null {
         const value = this.storeAdapter.getItem(`${this.prefix}${key}`);
 
         if (!value) {
@@ -88,7 +88,7 @@ export default class Storage {
      * @param value - value of item
      * @param expire - date of expire
      */
-    public set(key: string, value: string | number | Object | null, expire?: Date): void {
+    public set(key: string, value: string | number | Record<string, any> | null, expire?: Date): void {
         let valueToSave = typeof value === 'number' ? value.toString() : value;
         if (expire) {
             valueToSave = {
