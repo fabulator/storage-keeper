@@ -33,7 +33,7 @@
     "jest-localstorage-mock": "^2.4.0"
   },
   "dependencies": {
-    "@types/js-cookie": "^2.2.2",
+    "@types/js-cookie": "^2.2.3",
     "js-cookie": "^2.2.1"
   }
 }
