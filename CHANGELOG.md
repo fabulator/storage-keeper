@@ -1,6 +1,38 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] 2019-10-21
+### Changed
+- [70ac37d](https://github.com/fabulator/storage-keeper/commit/70ac37d2f1a4a641d03cc7f941ff40516abc84d1) Update dependencies.
+- [8fbfdbe](https://github.com/fabulator/storage-keeper/commit/8fbfdbe9d6d33f5be757a73bfea9b6e2324f0aa5) Update dev dependency @types/node to ^12.11.1 
+- [fb8fe7d](https://github.com/fabulator/storage-keeper/commit/fb8fe7d5708ec254084672976551d05054427dd9) Update dependency @types/js-cookie to ^2.2.4
+
+### Other
+- [c03b3df](https://github.com/fabulator/storage-keeper/commit/c03b3dfa011cc6a0a5327a5af37165130670a1ec) Update dependency core-js to ^3.3.2
+- [fec74ae](https://github.com/fabulator/storage-keeper/commit/fec74ae6dafbb468aa17d35014cf360a6d994bf4) Update dependency core-js to ^3.3.1
+- [02e0410](https://github.com/fabulator/storage-keeper/commit/02e0410bb7c87bce634dbb80c8e86c4eace996c1) Update dependency @types/node to ^12.7.12
+- [6dff91e](https://github.com/fabulator/storage-keeper/commit/6dff91e0f3250ad8fae31a17d10c86f0960bd05b) Update dependency @types/js-cookie to ^2.2.3
+- [df0adeb](https://github.com/fabulator/storage-keeper/commit/df0adebb96e705da2b154c3ae514a215286df60f) Update dependency @socifi/babel-config to ^0.7.0
+- [8a51a83](https://github.com/fabulator/storage-keeper/commit/8a51a8349a11c77e2e8d79e2d0a39299b346ea9a) Update libraries
+- [54172ae](https://github.com/fabulator/storage-keeper/commit/54172ae216cdd9b632ee100bfd3b20f3ffc572bb) Update dependency js-cookie to ^2.2.1
+- [a3d71a0](https://github.com/fabulator/storage-keeper/commit/a3d71a0b25c8c6b7f6c8d36bf399b73937740517) Update babel config
+- [15f3181](https://github.com/fabulator/storage-keeper/commit/15f318149f44dcd321d1bc4757205e036397ddb5) Update dependency @types/js-cookie to ^2.2.2
+- [10ce675](https://github.com/fabulator/storage-keeper/commit/10ce675b5b061648d4026274d932cab6f67ef1ff) Update dependency @socifi/jest-config to ^2.3.1
+- [153c93e](https://github.com/fabulator/storage-keeper/commit/153c93e9d1e511cb0310bec2f0a6017018386109) Update dependency @socifi/eslint-config to ^2.7.1
+- [90046c6](https://github.com/fabulator/storage-keeper/commit/90046c6a89556d83c55579d256191a76c5d33d99) Update dependency @types/js-cookie to ^2.2.1
+- [ae28746](https://github.com/fabulator/storage-keeper/commit/ae28746473b197e5dc8e52a8067059e1e54ce0f0) Update dependency @socifi/rollup-config to ^2.1.0
+- [c121ace](https://github.com/fabulator/storage-keeper/commit/c121acee16af44b7e0e7adafebf810fa3fcc7546) Update dependency @socifi/eslint-config to ^2.6.1
+- [bc82f07](https://github.com/fabulator/storage-keeper/commit/bc82f07c87e5b68d98514323897d87cb2c462432) Update dependency jest-localstorage-mock to ^2.4.0
+- [51030b2](https://github.com/fabulator/storage-keeper/commit/51030b2b84121fc033723bb43aec226719fe323a) Update dependency @socifi/jest-config to ^2.2.0
+- [0f2e229](https://github.com/fabulator/storage-keeper/commit/0f2e22909279a99e424001635cb0e29f371fea0d) Update dependency @socifi/eslint-config to ^2.5.0
+
+### Update dependency @socifi/eslint-config to ^2.7.0 (#25)
+
+* Update dependency @socifi/eslint-config to ^2.7.0
+
+* Fixed
+- [7fb0d3f](https://github.com/fabulator/storage-keeper/commit/7fb0d3f1d8485bf3046efdd669b6eabb7be1e719) New version of eslint
+
 ## [2.0.0] - 2018-11-18
 ### Changed
 - Migrate to typescript
