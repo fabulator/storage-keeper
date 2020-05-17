@@ -8,7 +8,7 @@
 
 This library provide simple way how to interact with storages that are based on browser (localstorage, sessionstorage, cookie) or node (fs). It provides same interface for handling all of them.
 
-Storage have only three methods:
+Storage have only three async methods:
 
 - Get key
 - Set key (optionally set expiration date)
@@ -31,16 +31,16 @@ import { LocalStorage } from 'storage-keeper';
 
 const storage = new LocalStorage('prefix');
 
-storage.set('userId', 6);
-storage.set('user', 'paprika');
-storage.set('user', { name: 'paprika' });
+await storage.set('userId', 6);
+await storage.set('user', 'paprika');
+await storage.set('user', { name: 'paprika' });
 
 // add expiration date
-storage.set('signed', true, new Date('2018-05-01'));
+await storage.set('signed', true, new Date('2018-05-01'));
 
-console.log(storage.get('signed'));
+console.log(await storage.get('signed'));
 
-storage.remove('signed');
+await storage.remove('signed');
 ```
 
 ### How to use adapters
@@ -53,7 +53,7 @@ import CookieAdapter  from 'storage-keeper/dist/adapters/CookieAdapter';
 
 const storage = new Storage('prefix', new CookieAdapter());
 
-storage.set('some-value', 'x');
+await storage.set('some-value', 'x');
 ```
 
 For storing values in file on node:
@@ -64,15 +64,15 @@ import FileAdapter  from 'storage-keeper/dist/adapters/FileAdapter';
 
 const storage = new Storage('prefix', new FileAdapter('path-to-file'));
 
-storage.set('some-value', 'x');
+await storage.set('some-value', 'x');
 ```
 
 You can create your own adapter, just use following interface:
 
 ```javascript
 interface Adapter {
-    getItem(key: string): ?string;
-    setItem(key: string, data: string): void;
-    removeItem(key: string): void;
+    getItem(key: string): Promise<string | null> | string | null,
+    setItem(key: string, data: string): Promise<void> | void,
+    removeItem(key: string): Promise<void> | void,
 }
 ```

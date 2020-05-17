@@ -25,19 +25,19 @@ export default class FileAdapter implements Adapter {
         fs.writeFileSync(this.path, JSON.stringify(data));
     }
 
-    public getItem(key: string): string | null {
+    public async getItem(key: string) {
         // @ts-ignore
         return this.getFileContent()[key];
     }
 
-    public setItem(key: string, value: string): void {
+    public async setItem(key: string, value: string) {
         this.updateData({
             ...this.getFileContent(),
             [key]: value,
         });
     }
 
-    public removeItem(key: string): void {
+    public async removeItem(key: string) {
         const data = this.getFileContent();
         // @ts-ignore
         delete data[key];

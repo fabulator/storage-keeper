@@ -16,11 +16,11 @@ export default class CookieAdapter implements Adapter {
         this.options = options;
     }
 
-    public getItem(key: string): string | null {
+    public async getItem(key: string) {
         return Cookie.get(key) || null;
     }
 
-    public setItem(key: string, data: string): void {
+    public async setItem(key: string, data: string) {
         // @ts-ignore
         const decoded: EncodedValue | string = tryParseJson(data);
 
@@ -39,7 +39,7 @@ export default class CookieAdapter implements Adapter {
         Cookie.set(key, data, this.options);
     }
 
-    public removeItem(key: string): void {
+    public async removeItem(key: string) {
         Cookie.remove(key, this.options);
     }
 }

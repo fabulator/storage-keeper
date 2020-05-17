@@ -52,14 +52,8 @@ export default class Storage {
         return object;
     }
 
-    /**
-     * Get value from storage.
-     *
-     * @param key - storage key
-     * @returns content of storage
-     */
-    public get(key: string): string | Record<string, any> | null {
-        const value = this.storeAdapter.getItem(`${this.prefix}${key}`);
+    public async get(key: string): Promise<string | Record<string, any> | null> {
+        const value = await this.storeAdapter.getItem(`${this.prefix}${key}`);
 
         if (!value) {
             return null;
@@ -72,23 +66,11 @@ export default class Storage {
         }
     }
 
-    /**
-     * Remove item from storage.
-     *
-     * @param key - key to remove
-     */
-    public remove(key: string) {
-        this.storeAdapter.removeItem(`${this.prefix}${key}`);
+    public async remove(key: string) {
+        return this.storeAdapter.removeItem(`${this.prefix}${key}`);
     }
 
-    /**
-     * Set new item to storage.
-     *
-     * @param key - key of item
-     * @param value - value of item
-     * @param expire - date of expire
-     */
-    public set(key: string, value: string | number | Record<string, any> | null, expire?: Date): void {
+    public async set(key: string, value: string | number | Record<string, any> | null, expire?: Date) {
         let valueToSave = typeof value === 'number' ? value.toString() : value;
         if (expire) {
             valueToSave = {
@@ -97,6 +79,9 @@ export default class Storage {
             };
         }
 
-        this.storeAdapter.setItem(`${this.prefix}${key}`, typeof valueToSave === 'object' ? JSON.stringify(valueToSave) : valueToSave);
+        return this.storeAdapter.setItem(
+            `${this.prefix}${key}`,
+            typeof valueToSave === 'object' ? JSON.stringify(valueToSave) : valueToSave,
+        );
     }
 }
