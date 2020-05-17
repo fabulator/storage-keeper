@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [3.0.0] 2020-05-17
+### Changed
+- [2289fd5](https://github.com/fabulator/storage-keeper/commit/2289fd52cd8a2448d0521a6fc0db07d3ae59e108) All storage handling method set to async BREAKING
+
 ## [2.2.0] 2019-10-24
 ### Changed
 - [4a405d5](https://github.com/fabulator/storage-keeper/commit/4a405d527ca86811f355e4b0efc5d6a739f7a625) Update dev dependency @socifi/rollup-config to ^2.2.2
