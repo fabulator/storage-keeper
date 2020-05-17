@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [3.1.0] 2020-05-17
+### Changed
+- [61bdd05](https://github.com/fabulator/storage-keeper/commit/61bdd05f3a7adcb529d06f1d2fee0122795c1537) Update dependency @types/js-cookie to v2.2.6
+
 ## [3.0.0] 2020-05-17
 ### Changed
 - [2289fd5](https://github.com/fabulator/storage-keeper/commit/2289fd52cd8a2448d0521a6fc0db07d3ae59e108) All storage handling method set to async BREAKING
