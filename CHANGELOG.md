@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [3.2.0] 2020-05-29
+### Changed
+- [74cc61e](https://github.com/fabulator/storage-keeper/commit/74cc61e3225dbccb321700af1dfb3b788130a803) Update dependency @babel/runtime to v7.10.1
+- [b5a7db4](https://github.com/fabulator/storage-keeper/commit/b5a7db44be41acf2e8c8dcf2e62c1b2f444f09f7) Update dev dependency jest-localstorage-mock to v2.4.2 
+- [ef515da](https://github.com/fabulator/storage-keeper/commit/ef515da6d5d2f178ea09aa078cf1dd6a0d35dfe5) Update dev dependency @socifi/eslint-config to v2.10.2 
+
 ## [3.1.0] 2020-05-17
 ### Changed
 - [61bdd05](https://github.com/fabulator/storage-keeper/commit/61bdd05f3a7adcb529d06f1d2fee0122795c1537) Update dependency @types/js-cookie to v2.2.6
