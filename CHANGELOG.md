@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [3.3.0] 2020-05-31
+### Changed
+- [8aa51f2](https://github.com/fabulator/storage-keeper/commit/8aa51f2aa5f3be4a2cecc04b8cc5cc17aaf800db) Update dependency @babel/runtime to v7.10.2
+
 ## [3.2.0] 2020-05-29
 ### Changed
 - [74cc61e](https://github.com/fabulator/storage-keeper/commit/74cc61e3225dbccb321700af1dfb3b788130a803) Update dependency @babel/runtime to v7.10.1
