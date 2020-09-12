@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v3.7.0 (2020-09-12)
+### Fixed
+- [2968de1](https://github.com/fabulator/storage-keeper/commit/2968de16a8008ea4bdf547dcdccd8c8be183ba7e) Security lock update
+
+### Changed
+- [e50f321](https://github.com/fabulator/storage-keeper/commit/e50f321c557e68c8ea618b0938fa85819ea563dd) Update dev dependency semantic-release-config-fabulator to v2 
+- [ea0f210](https://github.com/fabulator/storage-keeper/commit/ea0f2104ba223979671b14a935284fa0dcdd112c) Update dev dependency jest-localstorage-mock to v2.4.3 
+
 ## [3.6.0] 2020-07-15
 ### Changed
 - [6204f6b](https://github.com/fabulator/storage-keeper/commit/6204f6bcba76aead06796f6f9f68f12c2788b395) Update dependency @babel/runtime to v7.10.5
