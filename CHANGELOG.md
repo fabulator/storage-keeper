@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## v3.7.1 (2020-09-14)
+### Fixed
+- [6cc1ee3](https://github.com/fabulator/storage-keeper/commit/6cc1ee3ad6e18b543e70ee0c64bdadd3004f6f88) Update lock for security updated
+
 ## v3.7.0 (2020-09-12)
 ### Fixed
 - [2968de1](https://github.com/fabulator/storage-keeper/commit/2968de16a8008ea4bdf547dcdccd8c8be183ba7e) Security lock update
