@@ -1,6 +1,6 @@
 {
   "name": "storage-keeper",
-  "version": "3.7.32",
+  "version": "3.7.33",
   "description": "Keeper for handling browser and node storages",
   "main": "dist/index.js",
   "jsnext:main": "dist/index.esm.js",
