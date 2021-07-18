@@ -26,7 +26,6 @@ export default class FileAdapter implements Adapter {
     }
 
     public async getItem(key: string) {
-        // @ts-ignore
         return this.getFileContent()[key];
     }
 
@@ -39,7 +38,7 @@ export default class FileAdapter implements Adapter {
 
     public async removeItem(key: string) {
         const data = this.getFileContent();
-        // @ts-ignore
+
         delete data[key];
         this.updateData(data);
     }

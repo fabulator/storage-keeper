@@ -7,7 +7,7 @@
 export default function tryParseJson(json: string): Record<string, any> | string {
     try {
         return JSON.parse(json);
-    } catch (exception) {
+    } catch {
         return json;
     }
 }

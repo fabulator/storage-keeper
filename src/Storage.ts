@@ -2,8 +2,8 @@ import { Adapter } from './adapters/Adapter';
 import tryParseJson from './tryParseJson';
 
 export interface EncodedValue {
-    expire: number,
-    value: string | null,
+    expire: number;
+    value: string | null;
 }
 
 export default class Storage {
@@ -38,14 +38,11 @@ export default class Storage {
     private _parseEncodedValue(object: EncodedValue | Record<string, any>, key: string): string | Record<string, any> | null {
         // is value expired?
 
-        // @ts-ignore
         if (object.expire && object.value && object.expire < Date.now()) {
             this.remove(key);
             return null;
-            // @ts-ignore
             // eslint-disable-next-line
         } else if (object.expire && object.value) {
-            // @ts-ignore
             return tryParseJson(object.value);
         }
 
@@ -61,7 +58,7 @@ export default class Storage {
 
         try {
             return this._parseEncodedValue(JSON.parse(value), key);
-        } catch (exception) {
+        } catch {
             return value;
         }
     }

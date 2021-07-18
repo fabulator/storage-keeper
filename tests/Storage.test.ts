@@ -40,7 +40,7 @@ describe('Test storage class', () => {
     });
 
     it('should return not expired objects', async () => {
-        const date = new Date(Date.now() + 1000000000);
+        const date = new Date(Date.now() + 1_000_000_000);
         await storage.set('b', { a: 'xxxxxxxx' }, date);
         expect(await storage.get('b')).toEqual({ a: 'xxxxxxxx' });
 

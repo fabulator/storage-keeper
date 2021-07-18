@@ -21,8 +21,7 @@ export default class CookieAdapter implements Adapter {
     }
 
     public async setItem(key: string, data: string) {
-        // @ts-ignore
-        const decoded: EncodedValue | string = tryParseJson(data);
+        const decoded = tryParseJson(data) as EncodedValue | string;
 
         if (typeof decoded === 'object' && decoded.expire) {
             const time = new Date();
