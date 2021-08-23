@@ -1,6 +1,6 @@
 {
   "name": "storage-keeper",
-  "version": "3.8.7",
+  "version": "3.8.8",
   "description": "Keeper for handling browser and node storages",
   "main": "dist/index.js",
   "module": "es/index.js",
